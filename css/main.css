@@ -311,11 +311,12 @@ body {
   height: 100%;
   box-sizing: border-box;
   padding: 1em;
-  background: #E5FCC2;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   opacity: 0;
   transition: .5s ease-out all;
+  border: 2px solid #000;
 }
 
 #featured-products-slides .item:hover .info {
@@ -334,8 +335,6 @@ body {
 }
 
 #featured-products-slides .item .info .buttons a {
-  background: rgb(26, 3, 61);
-  color: #E5FCC2;
   padding: .4em 1em;
   box-sizing: border-box;
   width: 95%;
@@ -343,10 +342,19 @@ body {
   display: inline-block;
   text-decoration: none;
   border-radius: 3px;
+  transition: .4s ease-out all;
+  color: #fff;
+}
+
+#featured-products-slides .item .info .buttons a {
+  background: #64908A;
+}
+#featured-products-slides .item .info .buttons a:first-of-type {
+  background: #C02942;
 }
 
 #featured-products-slides .item .info .buttons a:hover {
-  background: rgb(46, 23, 81);
+  opacity: .8;
 }
 
 #featured-products-slides .item .price-tags {
