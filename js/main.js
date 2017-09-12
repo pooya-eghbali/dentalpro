@@ -27,4 +27,14 @@ $(document).ready(function () {
       autoplayTimeout: 5000,
       autoplayHoverPause: true
   })
+  $('#featured-products-slides').owlCarousel({
+      loop:true,
+      margin:10,
+      responsiveClass:true,
+      rtl: true,
+      nav:false,
+      dots: false,
+      autoWidth: true
+  })
+  $('#featured-products-slides .item .description').dotdotdot();
 })
