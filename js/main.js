@@ -37,4 +37,20 @@ $(document).ready(function () {
       autoWidth: true
   })
   $('#featured-products-slides .item .description').dotdotdot();
+  $('.filter-expander').each(function () {
+    $(this).data('isOpen', false);
+    $(this).click(function (e) {
+      e.preventDefault();
+      var target = $(this).data('target');
+      var isOpen = $(this).data('isOpen');
+      if (isOpen) {
+        $(this).find('.chevron').html('<i class="fa fa-chevron-down" aria-hidden="true"></i>');
+        $(target).hide();
+      } else {
+        $(this).find('.chevron').html('<i class="fa fa-chevron-up" aria-hidden="true"></i>');
+        $(target).show();
+      }
+      $(this).data('isOpen', !isOpen);
+    })
+  })
 })
