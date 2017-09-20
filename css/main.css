@@ -110,12 +110,18 @@ body {
   padding: 2em;
 }
 
+#header {
+  position: relative;
+  width: 1248px;
+  margin: 0 auto;
+}
+
 #menu {
   text-align: center;
 }
 
 #menu .logo {
-  width: 17%;
+  width: 24%;
   height: auto;
   display: inline-block;
 }
@@ -144,6 +150,16 @@ body {
 .page-section {
   width: 1248px;
   margin: 0 auto;
+}
+
+.separator {
+  width: 100vw;
+  margin-right: -4em;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  padding: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 #main-page-slide-container {
@@ -210,6 +226,12 @@ body {
   opacity: .9;
 }
 
+.search-bar {
+  padding-top: 2em;
+  width: 432px;
+  box-sizing: border-box;
+}
+
 .search-bar .search-field input {
   width: 100%;
   box-sizing: border-box;
@@ -235,41 +257,99 @@ body {
   margin-top: 2em;
 }
 
-.search-filters {
+.search-filter {
   margin-top: 2em;
+  background: #f1f1f1;
+  padding: 1em;
+}
+
+.search-filter .filter-collection {
+  margin: 1em;
+  margin-top: 1.5em;
+  display: none;
+}
+
+.filter-checkbox-holder {
+  font-weight: 300;
+  position: relative;
+  margin-bottom: .2em;
+}
+
+.filter-checkbox-holder .eng {
+  direction: rtl;
+  float: left;
+}
+
+.filter-checkbox-holder [type=checkbox] {
+  display: none;
+}
+
+.filter-checkbox-holder .checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.1);
+  margin-left: .5em;
+  margin-bottom: -5px;
+  margin-right: -3px;
+  position: relative;
+  display: inline-block;
+}
+
+.filter-checkbox-holder .checkbox::after {
+  content: '';
+  width: 9px;
+  height: 5px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  transform: rotate(-45deg);
+  transition: .4s all ease-out;
+}
+
+.filter-checkbox-holder .checkbox:hover::after {
+  opacity: 0.3;
+}
+
+.filter-checkbox-holder [type=checkbox]:checked + .checkbox::after {
+  opacity: 1;
 }
 
 .expandable {
   display: none;
 }
 
-.search-filters .filter-expander {
-  color: #222;
+.search-filter .filter-expander {
+  color: #212121;
   text-decoration: none;
   transition: .3s ease-in all;
 }
 
-.search-filters .filter-expander .name::after {
+.search-filter .filter-expander .name::after {
   content: ":";
 }
 
-.search-filters .filter-expander .chevron {
+.search-filter .filter-expander .chevron {
   margin-left: 12px;
   margin-right: 16px;
 }
 
-.search-filters .filter-expander .selections {
+.search-filter .filter-expander .selections {
   font-weight: 300;
-}
-
-.search-filters .filter-expander:hover {
-  color: #c44;
 }
 
 #featured-products-slides {
   margin-top: 2em;
 }
 
+.search-results .item .product-image-container,
 #featured-products-slides .item .product-image-container {
   height: 165px;
   width: 165px;
@@ -277,6 +357,7 @@ body {
   margin: 0 auto;
 }
 
+.search-results .item .product-image-container img,
 #featured-products-slides .item .product-image-container img {
   position: absolute;
   top: 50%;
@@ -286,6 +367,7 @@ body {
   max-height: 100%;
 }
 
+.search-results .item,
 #featured-products-slides .item {
   padding: 1em;
   border: 1px solid #fff;
@@ -297,6 +379,7 @@ body {
   position: relative;
 }
 
+.search-results .item .title,
 #featured-products-slides .item .title {
   font-size: 1em;
   font-weight: 200;
@@ -304,6 +387,7 @@ body {
   flex-grow: 2;
 }
 
+.search-results .item .info,
 #featured-products-slides .item .info {
   position: absolute;
   left: 0;
@@ -318,12 +402,15 @@ body {
   opacity: 0;
   transition: .5s ease-out all;
   border: 2px solid #000;
+  z-index: 2;
 }
 
+.search-results .item:hover .info,
 #featured-products-slides .item:hover .info {
   opacity: 1;
 }
 
+.search-results .item .info .description,
 #featured-products-slides .item .info .description {
   overflow: hidden;
   flex-grow: 3;
@@ -331,10 +418,12 @@ body {
   font-weight: 200;
 }
 
+.search-results .item .info .buttons,
 #featured-products-slides .item .info .buttons {
   text-align: center;
 }
 
+.search-results .item .info .buttons a,
 #featured-products-slides .item .info .buttons a {
   padding: .4em 1em;
   box-sizing: border-box;
@@ -347,71 +436,62 @@ body {
   color: #fff;
 }
 
+.search-results .item .info .buttons a,
 #featured-products-slides .item .info .buttons a {
   background: #64908A;
 }
+
+.search-results .item .info .buttons a:first-of-type,
 #featured-products-slides .item .info .buttons a:first-of-type {
   background: #C02942;
 }
 
+.search-results .item .info .buttons a:hover,
 #featured-products-slides .item .info .buttons a:hover {
   opacity: .8;
 }
 
+.search-results .item .price-tags,
 #featured-products-slides .item .price-tags {
   text-align: center;
 }
 
+.search-results .item .price-tags .price-original,
 #featured-products-slides .item .price-tags .price-original {
   color: #c44;
   text-decoration: line-through;
   margin-left: 4px;
 }
 
+.search-results .item .price-tags .price::after,
 #featured-products-slides .item .price-tags .price::after {
   content: "ریال";
 }
 
-.filter-container {
-  padding-top: 3em;
+.product-search {
+  display: flex;
 }
 
-.filter-container .filter-checkbox-holder {
-  margin-left: 2em;
+.search-results {
+  width: 1370px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
-.filter-container [type=checkbox] {
-  display: none;
+.search-results .item {
+  margin-left: .7em;
+  margin-bottom: .7em;
+  border-radius: 0;
 }
 
-.filter-container label {
-  padding: .7em 3em;
-  position: relative;
-  color: #fff;
+.search-results .item .in-cart-info::after {
+  content: '|'
 }
 
-.filter-container .checkbox-design-helper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: .5s ease-out all;
-  background: #64908A;
-  z-index: -1;
-  border-radius: 3px;
-}
-
-.filter-container [type=checkbox]:checked + .checkbox-design-helper {
-  background: #C02942;
-}
-
-.filter-container label:hover > .checkbox-design-helper {
-  background: #74A09A;
-}
-
-.filter-collection {
-  display: none;
+.search-results .item:nth-of-type(4n+4) {
+  margin-left: 0;
 }
 
 /* ==========================================================================
