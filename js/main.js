@@ -37,6 +37,7 @@ $(document).ready(function () {
       autoWidth: true
   })
   $('#featured-products-slides .item .description').dotdotdot();
+  $('.search-results .item .description').dotdotdot();
   $('.filter-expander').each(function () {
     $(this).data('isOpen', false);
     $(this).click(function (e) {
