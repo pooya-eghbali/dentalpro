@@ -36,6 +36,15 @@ $(document).ready(function () {
       dots: false,
       autoWidth: true
   })
+  $('#brand-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      responsiveClass:true,
+      rtl: true,
+      nav:false,
+      dots: false,
+      autoWidth: true,
+  })
   $('#featured-products-slides .item .description').dotdotdot();
   $('.search-results .item .description').dotdotdot();
   $('.filter-expander').each(function () {
