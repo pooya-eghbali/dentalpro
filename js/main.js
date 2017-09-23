@@ -24,7 +24,7 @@ $(document).ready(function () {
       items:1,
       dots: false,
       autoplay: true,
-      autoplayTimeout: 5000,
+      autoplayTimeout: 3000,
       autoplayHoverPause: true
   })
   $('#featured-products-slides').owlCarousel({
