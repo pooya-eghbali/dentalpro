@@ -62,7 +62,6 @@ textarea {
 body {
   width: 100%;
   direction: rtl;
-  padding-bottom: 8em;
 }
 
 .border-top {
@@ -208,7 +207,7 @@ body {
   margin-left: 1em;
 }
 
-#second-menu .menu-group-holder .menu-group.flex-grow {
+.flex-grow {
   min-width: 1px;
   flex-grow: 2;
 }
@@ -757,6 +756,113 @@ body {
 
 .latest-blog .blog-post-summary a:hover {
   color: #be26ff;
+}
+
+.copyright {
+  width: 100vw;
+  box-sizing: border-box;
+  right: -4em;
+  position: relative;
+  padding: 2em 6em;
+  padding-bottom: 1.1em;
+  font-weight: 200;
+  background: #f1f1f1;
+  margin-top: 2em;
+  margin-bottom: -2em;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#footer {
+  padding-top: .2em;
+}
+
+.contact-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.contact-info > div {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 2em;
+}
+
+.contact-info > div i {
+  margin-right: .7em;
+}
+
+.footer-links {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-links > div {
+  width: 50%;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.footer-links h3 {
+  font-weight: 300;
+}
+
+.footer-links h4 {
+  font-weight: 200;
+}
+
+.social-links a img {
+  height: 48px;
+  width: auto;
+}
+
+.social-links a {
+  margin-right: 1em;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-social {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-dl-links a {
+  margin-bottom: .5em;
+}
+
+.app-dl-links {
+  margin-bottom: 1em;
 }
 
 /* ==========================================================================
