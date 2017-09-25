@@ -865,6 +865,31 @@ body {
   margin-bottom: 1em;
 }
 
+.category {
+  width: calc(100% / 6);
+  padding-left: 1em;
+}
+
+.category a {
+  text-decoration: none;
+  color: #333;
+  text-overflow: ellipsis;
+}
+
+.category a:hover {
+  color: #000;
+}
+
+.category a h2 {
+  font-weight: 300;
+}
+
+.category a h3 {
+  font-weight: 200;
+}
+
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
