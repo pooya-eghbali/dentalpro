@@ -376,7 +376,7 @@ body {
 
 .search-bar {
   padding-top: 2em;
-  width: 432px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -782,7 +782,7 @@ body {
 .copyright {
   width: 100vw;
   box-sizing: border-box;
-  right: -4em;
+  right: -2em;
   position: relative;
   padding: 2em 6em;
   padding-bottom: 1.1em;
@@ -1049,6 +1049,7 @@ a.add-to-cart:hover{
   padding: 1em;
   transition: .3s ease-out all;
   z-index: 1000000001;
+  padding: 1.5em 1em;
 }
 
 .page {
@@ -1058,12 +1059,20 @@ a.add-to-cart:hover{
   background: #fff;
 }
 
-.menu-open {
+.menu-open:not(.no-overlay) {
   overflow: hidden;
+}
+
+.menu-open.no-overlay {
+  overflow-x: hidden;
 }
 
 .menu-open .page {
   right: 400px;
+}
+
+.menu-open .fixed-search-bar {
+  display: none;
 }
 
 .menu-open .fixed-menu {
@@ -1085,31 +1094,117 @@ body {
   transition: .2s all ease-in;
   box-sizing: border-box;
   padding: 2em 1.5em;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .menu-open .fixed-menu-contents {
   right: 1em;
 }
 
-.fixed-menu-menu-container {
+.fixed-menu-menu {
   display: none;
+  padding: .7em;
+}
+
+.fixed-menu-menu > i {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+
+.in-cart-product {
+  display: flex;
+}
+
+.in-cart-product .product-image {
+  position: relative;
+}
+
+.in-cart-product {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.in-cart-product img {
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -40px;
+}
+
+.in-cart-product .old {
+  color: #cc3333;
+  text-decoration: line-through;
+  margin-left: .5em;
+}
+
+.remove-button {
+  color: #cc3333;
+  text-decoration: none;
+}
+
+.add-button {
+  color: #00a693;
+  text-decoration: none;
+}
+
+.info-button {
+  color: #000;
+  text-decoration: none;
+}
+
+.product-buttons {
+  margin-top: 1em;
+}
+
+.product-buttons a {
+  margin-left: 1em;
+}
+
+.in-cart-product .total::after,
+.in-cart-product .new::after {
+  content: "ریال"
+}
+
+.in-cart-product h3 {
+  font-weight: 400;
 }
 
 #overlay {
-  width: 100%;
-  height: 100%;
   background: rgba(255,255,255,1);
   top: 0;
   right: 0;
   position: absolute;
   display: block;
   z-index: 1000000000;
-  transform:translate(9999px);
+  transform: translate(9999px);
   transition: opacity .3s ease-in-out;
+  width: calc(100vw - 400px);
+  height: 100%;
 }
 
-.menu-open #overlay {
+.close-x-link {
+  background-image: url(../img/close-x.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: block;
+  z-index: 1000000001;
+  left: 0px;
+  top: 10px;
+  filter: brightness(.6);
+}
+
+.close-x-link:hover {
+  filter: brightness(.1) !important;
+}
+
+.menu-open:not(.no-overlay) #overlay {
   opacity: 1;
   transform: translate(0);
   opacity: .7;
@@ -1135,6 +1230,81 @@ body {
   margin-bottom: .3em;
 }
 
+.fixed-search-bar {
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  background: #fff;
+  position: fixed;
+  top: 0px;
+  z-index: 10000;
+}
+
+#sticky-search-bar {
+  border-bottom: 1px solid #f1f1f1;
+  padding: 1em;
+  box-sizing: border-box;
+  margin-top: 1em;
+}
+
+.menu-link-holder {
+  position: relative;
+}
+
+.menu-open .fixed-menu .menu-link-holder a {
+  transition: .2s all ease-out;
+}
+
+.menu-open .fixed-menu .menu-link-holder a.active {
+  color: #bb3355;
+}
+
+.discus {
+  margin-top: 2em;
+}
+
+/*
+.fixed-menu .menu-link-holder a {
+  padding: .5em 1em;
+  box-sizing: border-box;
+}
+
+.menu-open .fixed-menu .menu-link-holder a.active {
+  border: 2px solid;
+}
+*/
+/*
+.fixed-menu .menu-link-holder a {
+  padding: .5em 1em;
+  display: inline-block;
+  transition: .2s all ease-in;
+}
+
+.menu-open .fixed-menu .menu-link-holder a.active {
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+.fixed-menu .menu-link-holder a.active::after {
+  background: #fff;
+  transition: .2s all ease-in;
+  content: "";
+}
+
+.menu-open .fixed-menu .menu-link-holder a.active::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 36px;
+  height: 36px;
+  background: #000;
+  left: -18px;
+  top: 8px;
+}
+*/
 /* ==========================================================================
    Media Queries
    ========================================================================== */
